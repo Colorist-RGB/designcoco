@@ -34,7 +34,7 @@ body {
     padding-right: 8px;
 }
 
-/* 헤더 네비게이션 */
+/* 헤더 네비게이션 1차메뉴 */
 #header #nav .depth1 {
     float: left;
     display: block;
@@ -54,7 +54,40 @@ body {
     text-align: center;
     font-size: 18px;
     color: #1e1e1e;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 15px;
 }
+#header #nav .depth3 a:hover {
+    color: #00529b;
+}
+/* 헤더 네비게이션 2차메뉴 */
+#header #nav .depth3 > li:hover .depth4 {
+    display: block;
+}
+#header #nav .depth4 {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0%;
+    z-index: 999;
+    display: none;
+}
+#header #nav .depth4 > li {
+    background: #555;
+    color: #fff;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 13px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+#header #nav .depth4 > li:hover {
+    background: #00529b;
+}
+#header #nav .depth4 > li > a:hover {
+    color: #dfe9fe;
+}
+
 
 /* 섹션 아티클1 슬라이드 */
 #section .article1 .slide1 {
