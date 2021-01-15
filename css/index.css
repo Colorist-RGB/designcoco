@@ -155,7 +155,7 @@ body {
 
 /* 섹션 아티클3 */
 #section .article3 {
-    background: url(../img/intro_bg.jpg) no-repeat center top;
+    background: url(../img/intro_bg.jpg) no-repeat center;
     background-size: cover;
     height: 304px;
     color: #fff;
