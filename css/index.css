@@ -27,6 +27,9 @@ body {
     border-left: 1px solid #999;
     padding: 4px 15px;
 }
+#header .outer .depth1 > a:hover {
+    color: #333;
+}
 #header .outer .depth1 > a:last-child {
     border-right: 1px solid #999;
 }
@@ -119,6 +122,10 @@ body {
     border: 1px solid #fff;
     padding: 8px 35px;
 }
+#section .article1 .slide1 .slidetext a:hover {
+    background: #fff;
+    color: #333;
+}
 
 /* 섹션 아티클2 */
 #section .article2 .depth1 .text {
@@ -160,6 +167,10 @@ body {
     display: inline-block;
     padding: 8px 40px;
     border: 1px solid #fff;
+}
+#section .article2 .text2 a:hover {
+    background: #fff;
+    color: #333;
 }
 #section .article2 .image > ul > li:nth-child(1) {
     background: url(../img/what1.jpg) no-repeat center;
@@ -213,6 +224,10 @@ body {
     display: inline-block;
     padding: 8px 30px;
     border: 1px solid #fff;
+}
+#section .article3 .depth1 > a:hover {
+    background: #fff;
+    color: #333;
 }
 #section .article3 .depth1 > a > i {
     padding-left: 8px;
@@ -270,6 +285,9 @@ body {
     color: #fff;
     padding: 0 15px;
 }
+#footer .depth1 .fonticon > a:hover {
+    color: #ccc;
+}
 #footer .depth1 .info1 {
     padding: 30px ;
 }
@@ -283,6 +301,10 @@ body {
     font-size: 11px;
     padding: 3px 10px;
     border: 1px solid #fff;
+}
+#footer .depth1 .info2 > a:hover {
+    background: #fff;
+    color: #333;
 }
 
 /* 섹션 푸터 TOP 버튼 */
