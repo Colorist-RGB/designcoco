@@ -39,12 +39,12 @@ body {
 }
 
 /* 헤더 네비게이션 1차메뉴 */
-#header #nav .depth1 {
+/* #header #nav .depth1 {
     float: left;
     display: block;
     padding: 15px 0;
     width: 40%;
-}
+} */
 #header #nav .depth2 {
     float: right;
     display: block;
@@ -181,6 +181,9 @@ button { border: none; outline: none; }
     display: inline-block;
     text-align: center;
 }
+.slide.slick-cloned .slidetext {
+    opacity: 0;
+}
 .slide .slidetext h1 {
     font-size: 42px;
     font-weight: 800;
@@ -201,6 +204,23 @@ button { border: none; outline: none; }
     background: #fff;
     color: #333;
 }
+
+/* 슬라이드 멈춤 버튼 설정 */
+.article1 {
+    position: relative
+}
+.article1 .plpa {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    margin-left: 70px;
+    color: #fff;
+    border: none;
+    background: none;
+    font-size: 20px;
+}
+
+
 
 /* 섹션 아티클2 */
 #section .article2 .depth1 .text {
@@ -630,6 +650,7 @@ button { border: none; outline: none; }
     position: fixed;
     bottom: 2%;
     right: 1%;
+    border-radius: 50%;
 }
 #footer .topbutton .depth2 > a {
     display: inline-block;
