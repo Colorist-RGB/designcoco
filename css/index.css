@@ -12,6 +12,11 @@ body {
     font-size: 15px;
     font-family: 'Noto Sans KR', sans-serif;
 }
+/* 열기. 닫기 */
+#header .open,
+#header .close {
+    display: none;
+}
 
 /* 헤더 아웃터 */
 #header .outer {
@@ -39,12 +44,12 @@ body {
 }
 
 /* 헤더 네비게이션 1차메뉴 */
-/* #header #nav .depth1 {
+#header #nav .depth1 {
     float: left;
     display: block;
     padding: 15px 0;
     width: 40%;
-} */
+}
 #header #nav .depth2 {
     float: right;
     display: block;
@@ -66,7 +71,7 @@ body {
     color: #00529b;
 }
 /* 헤더 네비게이션 2차메뉴 */
-#header #nav .depth3 > li:hover .depth4 {
+#header #nav .depth3 > li.on .depth4 {
     display: block;
     /* opacity: 1; 쓰면안됌 오류 */
 }
