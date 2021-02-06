@@ -40,3 +40,34 @@ $('.article1 .plpa').on('click', function(){
         $ibutton.removeClass('fa-play').addClass('fa-pause')
     }
 })
+// 열기, 닫기 버튼
+$('#header #nav .open').on('click', function(){
+    $(this).addClass('on')
+    $(this).next().addClass('on')
+    $(this).next().next().addClass('on')
+})
+$('#header .close').on('click', function(){
+    $(this).removeClass('on')
+    $(this).prev().removeClass('on')
+    $(this).prev().prev().removeClass('on')
+})
+
+
+// 1024기준
+var ww = $(window).width()
+// console.log(ww)
+if(ww>1024) {
+    $('#header #nav .depth3 > li').hover(
+        function(){
+            $(this).addClass('on')
+        },
+        function(){
+            $(this).removeClass('on')
+        }
+    )
+} else {
+    $('#header #nav .depth3 > li').on('click', function(){
+        $(this).toggleClass('on')
+        $(this).siblings().removeClass('on')
+    })
+}
