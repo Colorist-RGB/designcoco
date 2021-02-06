@@ -1,0 +1,85 @@
+@media screen and (max-width:1024px) {
+
+/* 열기. 닫기 */
+#header {
+    position: relative;
+}
+#header .open,
+#header .close {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    bottom: 30%;
+    display: none;
+}
+#header .open {
+    display: block;
+}
+#header .open.on {
+    display: none;
+}
+#header .close {
+    right: 5.4%;
+}
+#header .close.on {
+    display: block;
+}
+#header .open,
+#header .close {
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: #ed5c20;
+}
+
+/* 헤더 네비게이션 1차메뉴 */
+#header #nav .depth1 {
+    float: none;
+    display: block;
+    padding: 15px 0;
+    width: 40%;
+}
+#nav {
+    position: relative;
+}
+#header #nav .depth2 {
+    float: none;
+    display: none;
+    padding-top: 0px;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 9999;
+}
+#header #nav .depth2.on {
+    display: block;
+}
+#header #nav .depth3 > li {
+    float: none;
+    width: 100%;
+    position: static;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #999;
+}
+#header #nav .depth3>li:nth-child(5) {
+    border-bottom: none;
+}
+#header #nav .depth3 a:hover {
+    color: #00529b;
+}
+#header #nav .depth3>li>a {
+    display: block;
+    padding: 15px 0;
+    background: #fff;
+}
+#header #nav .depth4 {
+    position: static;
+}
+
+/* 헤더 네비게이션 2차메뉴 */
+#header #nav .depth3 > li.on .depth4 {
+    display: block;
+
+    /*마지막 영역*/
+}
