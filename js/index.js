@@ -41,33 +41,110 @@ $('.article1 .plpa').on('click', function(){
     }
 })
 // 열기, 닫기 버튼
+$('#header #nav .open').addClass('on')
 $('#header #nav .open').on('click', function(){
-    $(this).addClass('on')
+    $(this).removeClass('on') //
     $(this).next().addClass('on')
     $(this).next().next().addClass('on')
 })
 $('#header .close').on('click', function(){
     $(this).removeClass('on')
     $(this).prev().removeClass('on')
-    $(this).prev().prev().removeClass('on')
+    $(this).prev().prev().addClass('on') //
+})
+
+//함수 선언 - 이 자체로는 아무 수행 안함(호출되어야 기능 수행)
+function init(){
+    var ww = $(window).width()
+    if ( ww>1024 && !$('html').hasClass('pc') ) {
+        $('html').addClass('pc').removeClass('mobile')
+        $('.search #sbox').removeClass('on')
+    } else if ( ww<=1024 && !$('html').hasClass('mobile') ) {
+        $('html').addClass('mobile').removeClass('pc')
+        $('#header .close').removeClass('on')
+        $('#header .depth2').removeClass('on') //
+        $('#header .open').addClass('on')
+        $('.search #sbox').removeClass('on')
+    }
+}
+//함수 호출 - 최초에 화면 사이즈 출력 대체
+init()
+
+//함수 호출 - 리사이즈 시 화면 사이즈 출력 대체
+$(window).on('resize', function(){
+    init()
+})
+
+//pc화면 리사이즈 시 호버
+$('#header #nav .depth3 > li').hover(
+    function(){
+        if ( $('html').hasClass('pc') ) {
+            $(this).addClass('on')
+        }
+    },
+    function(){
+        if ( $('html').hasClass('pc') ) {
+            $(this).removeClass('on')
+        }
+    }
+)
+
+//mobile화면 리사이즈 시 클릭
+$('#header #nav .depth3 > li').on('click', function(e){
+    if ( $('html').hasClass('mobile') ) {
+        e.preventDefault()
+        $(this).toggleClass('on')
+        $(this).siblings().removeClass('on')
+    }
+})
+
+//돋보기 클릭 시 검색창 박스 열고 닫기
+$('.search label').on('click', function(){
+    $(this).prev().toggleClass('on')
 })
 
 
-// 1024기준
-var ww = $(window).width()
-// console.log(ww)
-if(ww>1024) {
-    $('#header #nav .depth3 > li').hover(
-        function(){
-            $(this).addClass('on')
-        },
-        function(){
-            $(this).removeClass('on')
-        }
-    )
-} else {
-    $('#header #nav .depth3 > li').on('click', function(){
-        $(this).toggleClass('on')
-        $(this).siblings().removeClass('on')
-    })
-}
+
+
+
+
+// //최초에 화면 사이즈를 출력
+// if (ww>1024) {
+//     $('html').addClass('pc').removeClass('mobile')
+// } else {
+//     $('html').addClass('mobile').removeClass('pc')
+// }
+
+// //리사이즈 시 화면 사이즈를 출력
+// $(window).on('resize', function(){
+//     var ww = $(this).width()
+//     if (ww>1024) {
+//         $('html').addClass('pc').removeClass('mobile')
+//     } else {
+//         $('html').addClass('mobile').removeClass('pc')
+//     }
+// })
+
+// // 1024기준 - 이전 코딩(한번만 작동)
+// var ww = $(window).width()
+// // console.log(ww)
+// if(ww>1024) {
+//     $('#header #nav .depth3 > li').hover(
+//         function(){
+//             $(this).addClass('on')
+//         },
+//         function(){
+//             $(this).removeClass('on')
+//         }
+//     )
+// } else {
+//     $('#header #nav .depth3 > li').on('click', function(e){
+//         e.preventDefault()
+//         $(this).toggleClass('on')
+//         $(this).siblings().removeClass('on')
+//     })
+// }
+// $('.depth4 > li').on('click',function(e){
+//     e.stopPropagation()
+//     // console.log(e.target)
+// })
