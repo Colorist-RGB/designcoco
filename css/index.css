@@ -12,6 +12,29 @@ body {
     font-size: 15px;
     font-family: 'Noto Sans KR', sans-serif;
 }
+
+/* 검색창 */
+#header .depth1 {
+    position: relative;
+}
+#header .search {
+    position: absolute;
+    right: 315px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#header .search #sbox {
+    border: none;
+    outline: none;
+    text-indent: 1em;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+#header .search #sbox.on {
+    width: 170px;
+}
+
 /* 열기. 닫기 */
 #header .open,
 #header .close {
