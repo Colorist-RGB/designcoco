@@ -1,5 +1,31 @@
 @media screen and (max-width:1024px) {
 
+    /* 검색창 */
+#header .depth1 {
+    position: relative;
+}
+#header .search {
+    position: absolute;
+    right: 63px;
+    top: 47px;
+    font-size: 20px;
+    transform: translateY(0%);    
+    z-index: 999;
+}
+#header .search #sbox {
+    border: none;
+    outline: none;
+    text-indent: 1em;
+    width: 0px;
+    overflow: hidden;
+    transition: all 0.5s;
+    background: #ddd;
+    padding: 7px 0;
+}
+#header .search #sbox.on {
+    width: 190px;
+}
+
 /* 열기. 닫기 */
 #header {
     position: relative;
@@ -11,25 +37,19 @@
     top: 30%;
     bottom: 30%;
     display: none;
-}
-#header .open {
-    display: block;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: #ed5c20;
 }
 #header .open.on {
-    display: none;
+    display: block; /**/
 }
 #header .close {
     right: 5.4%;
 }
 #header .close.on {
-    display: block;
-}
-#header .open,
-#header .close {
-    font-size: 32px;
-    background: none;
-    border: none;
-    color: #ed5c20;
+    display: block; /**/
 }
 
 /* 헤더 네비게이션 1차메뉴 */
@@ -76,10 +96,5 @@
 #header #nav .depth4 {
     position: static;
 }
-
-/* 헤더 네비게이션 2차메뉴 */
-#header #nav .depth3 > li.on .depth4 {
-    display: block;
-
     /*마지막 영역*/
 }
