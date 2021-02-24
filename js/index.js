@@ -103,7 +103,15 @@ $('.search label').on('click', function(){
     $(this).prev().toggleClass('on')
 })
 
-
+// 네비게이션 메뉴 픽스
+$(window).on('scroll', function(){
+    var sct = $(this).scrollTop()
+    if (sct>=50 && !$('#header').hasClass('on')) {
+        $('#header').addClass('on')
+    } else if (sct<50 && $('#header').hasClass('on')) {
+        $('#header').removeClass('on')
+    }
+})
 
 
 
@@ -148,3 +156,27 @@ $('.search label').on('click', function(){
 //     e.stopPropagation()
 //     // console.log(e.target)
 // })
+
+// What we do에서 클릭 시 배경이미지 모달창으로 띄우기
+$('.article2 ul li').on('click', function(){
+    var bgimg = $(this).css('backgroundImage')
+    var newbgimg = bgimg.replace('url(.','')
+    var src = newbgimg.replace(')','')
+    $('body').append('<div class="outbox"><div class="inbox"></div></div>')
+    $('.outbox').css({
+        position: 'fixed',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        background: 'rgba(0,0,0,0.8)'
+    })
+    $('.inbox').css({
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        background: 'rgba(0,0,0,0.8)'
+    })
+    $('.inbox').append(`<img src="${src}" alt="">`)
+})
