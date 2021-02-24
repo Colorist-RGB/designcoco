@@ -67,6 +67,17 @@ body {
 }
 
 /* 헤더 네비게이션 1차메뉴 */
+#header.on {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: #fff;
+    width: 100%;
+}
+#header.on .outer {
+    display: none;
+}
 #header #nav .depth1 {
     float: left;
     display: block;
@@ -275,7 +286,10 @@ button { border: none; outline: none; }
     height: 520px;
     float: left;
     width: 24%;
-    margin-right: 1.3333%
+    margin-right: 1.3333%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 #section .article2 .image > ul > li:last-child {
     margin-right: 0;
@@ -300,20 +314,16 @@ button { border: none; outline: none; }
     color: #333;
 }
 #section .article2 .image > ul > li:nth-child(1) {
-    background: url(../img/what1.jpg) no-repeat center;
-    background-size:cover;
+    background-image: url(../img/what1.jpg);
 }
 #section .article2 .image > ul > li:nth-child(2) {
-    background: url(../img/what2.jpg) no-repeat center;
-    background-size:cover;
+    background-image: url(../img/what2.jpg);
 }
 #section .article2 .image > ul > li:nth-child(3) {
-    background: url(../img/what3.jpg) no-repeat center;
-    background-size:cover;
+    background-image: url(../img/what3.jpg);
 }
 #section .article2 .image > ul > li:nth-child(4) {
-    background: url(../img/what4.jpg) no-repeat center;
-    background-size:cover;
+    background-image: url(../img/what4.jpg);
 }
 #section .position {
     position: relative;
